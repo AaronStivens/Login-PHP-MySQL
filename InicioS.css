@@ -76,10 +76,9 @@ body {
 	border-radius: 5px;
 	width: 100%;
 	font-size: 18px;
-	font-family: poppins;
-}
-.form-box input[type=checkbox] {
-	display: none;
+	font:var(--fa-font-solid);
+	content: "\f007";
+ 
 }
 .form-box label {
 	position: relative;
@@ -102,13 +101,7 @@ body {
 	bottom: 1px;
 	background-color: #ddd;
 }
-.form-box input[type=checkbox]:checked+label:before {
-	content: "\2713";
-	font-size: 20px;
-	color: #000;
-	text-align: center;
-	line-height: 20px;
-}
+
 .form-box span {
 	font-size: 14px;
 }
@@ -139,3 +132,49 @@ body {
 span a {
 	color: #BBB;
 }
+
+.error{
+    position: fixed; /* Fijamos la posición */
+    bottom: 20px; /* Ajustamos la distancia desde la parte inferior */
+    right: 20px; /* Ajustamos la distancia desde el lado derecho */
+    padding: 10px; /* Espaciado interno */
+    background-color: #f44336;
+    color: white;
+    border-radius: 5px; 
+    animation: errorA 1s ease-in-out, errorS 0.5s ease-in-out;
+}
+
+@keyframes errorA {
+    0% {
+        opacity: 0; /* Comienza invisible */
+    }
+    20% {
+        opacity: 1; /* Se vuelve visible */
+    }
+    80% {
+        opacity: 1; /* Permanece visible */
+    }
+    100% {
+        opacity: 1; /* Desaparece */
+    }
+}
+
+@keyframes errorS {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+}
+
+

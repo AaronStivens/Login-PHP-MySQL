@@ -23,11 +23,11 @@ $resultado = $conexion->query($sql);
 
 // Verificar si se encontró un registro con las credenciales proporcionadas
 if ($resultado->num_rows == 1) {
-    echo "Inicio de sesión exitoso. ¡Bienvenido, $usuario!";
-    // Aquí puedes redirigir al usuario a la página de inicio, por ejemplo.
-} else {
-    echo "Inicio de sesión fallido. Verifica tus credenciales.";
-}
+    header("Location: Principal.php"); 
+    exit();
 
+}else{
+    header("Location: Inicio.php?error=Usuario o contraseña incorrectos");
+}
 // Cerrar la conexión a la base de datos
 $conexion->close();
