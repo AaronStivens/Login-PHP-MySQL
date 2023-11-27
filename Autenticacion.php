@@ -3,7 +3,7 @@
 $host = 'localhost'; // Cambia esto si tu servidor MySQL no se ejecuta localmente
 $usuario_db = 'Aaron';
 $contrasena_db = '';
-$base_de_datos = 'prueba';
+$base_de_datos = 'phpdb';
 
 // Obtener datos del formulario
 $usuario = $_POST['usuario'];
@@ -18,7 +18,7 @@ if ($conexion->connect_error) {
 }
 
 // Consulta SQL para verificar las credenciales del usuario
-$sql = "SELECT * FROM usuario WHERE Usuario = '$usuario' AND Contraseña = '$contrasena'";
+$sql = "SELECT * FROM user WHERE usuario = '$usuario' AND contraseña = '$contrasena'";
 $resultado = $conexion->query($sql);
 
 // Verificar si se encontró un registro con las credenciales proporcionadas
